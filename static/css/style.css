@@ -1,0 +1,246 @@
+/* Estilos Gerais */
+:root {
+  --cor-primaria: #3498db;
+  --cor-secundaria: #2980b9;
+  --cor-sucesso: #2ecc71;
+  --cor-sucesso-hover: #27ae60;
+  --cor-perigo: #e74c3c;
+  --cor-perigo-hover: #c0392b;
+  --cor-texto: #2c3e50;
+  --cor-fundo: #f5f7fa;
+  --cor-borda: #dfe6e9;
+  --cor-card: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3 {
+  color: var(--cor-primaria);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Barra de Navegação */
+.navbar {
+  background-color: var(--cor-primaria);
+  padding: 15px 0;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 3px;
+  transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+  background-color: var(--cor-secundaria);
+}
+
+/* Cards e Formulários */
+.card {
+  background-color: var(--cor-card);
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--cor-texto);
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--cor-primaria);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--cor-secundaria);
+}
+
+.btn-success {
+  background-color: var(--cor-sucesso);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: var(--cor-sucesso-hover);
+}
+
+.btn-danger {
+  background-color: var(--cor-perigo);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: var(--cor-perigo-hover);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+/* Tabela de Livros */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: var(--cor-card);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.table th, .table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.table th {
+  background-color: var(--cor-primaria);
+  color: white;
+  font-weight: 500;
+}
+
+.table tr:hover {
+  background-color: rgba(52, 152, 219, 0.1);
+}
+
+.table-actions {
+  white-space: nowrap;
+}
+
+/* Mensagens Flash */
+.flash-messages {
+  margin-bottom: 20px;
+}
+
+.flash-message {
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+}
+
+.flash-success {
+  background-color: var(--cor-sucesso);
+}
+
+.flash-error {
+  background-color: var(--cor-perigo);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar li {
+    margin: 5px 0;
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Página de Adição/Edição de Livros */
+.book-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Estado Vazio */
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: #7f8c8d;
+}
+
+.empty-state i {
+  font-size: 50px;
+  margin-bottom: 20px;
+  color: #bdc3c7;
+}

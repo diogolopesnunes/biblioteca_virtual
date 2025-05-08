@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Pessoal</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Minha Biblioteca</h1>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for message in messages %}
+                        <p class="flash-message">{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% if livros %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Ano</th>
+                    <th>Data de Devolução</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for livro in livros %}
+                <tr>
+                    <td>{{ livro[0] }}</td>
+                    <td>{{ livro[1] }}</td>
+                    <td>{{ livro[2] }}</td>
+                    <td>{{ livro[3] }}</td>
+                    <td class="actions">
+                        <a href="/editar_livro/{{ loop.index0 }}" class="btn edit">Editar</a>
+                        <a href="/apagar_livro/{{ loop.index0 }}" class="btn delete">Apagar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="empty">Nenhum livro cadastrado ainda.</p>
+        {% endif %}
+
+        <div class="add-book">
+            <a href="/adicionar_livro" class="btn add">Adicionar Livro</a>
+        </div>
+    </div>
+</body>
+</html>
